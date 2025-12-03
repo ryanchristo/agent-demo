@@ -8,12 +8,12 @@ import (
 
 	"github.com/joho/godotenv"
 
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/ryanchristo/agentic/erc-8004/client/identity"
-	"github.com/ryanchristo/agentic/erc-8004/client/reputation"
-	"github.com/ryanchristo/agentic/erc-8004/client/validation"
+	"github.com/ryanchristo/agentic/erc-8004/contracts"
+	"github.com/ryanchristo/agentic/erc-8004/contracts/identity"
+	"github.com/ryanchristo/agentic/erc-8004/contracts/reputation"
+	"github.com/ryanchristo/agentic/erc-8004/contracts/validation"
 )
 
 func main() {
@@ -63,11 +63,11 @@ func main() {
 		log.Fatalf("Failed to create validation client: %v", err)
 	}
 
-	// Log calling contract clients.
-	fmt.Println("Calling ERC-8004 contract clients...")
+	// Log calling contract methods.
+	fmt.Println("Calling ERC-8004 contract methods...")
 
 	// Get identity contract version.
-	identityVersion, err := readContractMethod(identityClient.Contract, "getVersion")
+	identityVersion, err := contracts.Read(identityClient.Contract, "getVersion")
 	if err != nil {
 		log.Fatalf("Failed to call contract method getVersion: %v", err)
 	} else {
@@ -75,7 +75,7 @@ func main() {
 	}
 
 	// Get reputation contract version.
-	reputationVersion, err := readContractMethod(reputationClient.Contract, "getVersion")
+	reputationVersion, err := contracts.Read(reputationClient.Contract, "getVersion")
 	if err != nil {
 		log.Fatalf("Failed to call contract method getVersion: %v", err)
 	} else {
@@ -83,30 +83,10 @@ func main() {
 	}
 
 	// Get validation contract version.
-	validationVersion, err := readContractMethod(validationClient.Contract, "getVersion")
+	validationVersion, err := contracts.Read(validationClient.Contract, "getVersion")
 	if err != nil {
 		log.Fatalf("Failed to call contract method getVersion: %v", err)
 	} else {
 		fmt.Printf("Version: %s\n", validationVersion)
 	}
-}
-
-// Call a contract method that is read-only.
-func readContractMethod(contract *bind.BoundContract, methodName string, args ...any) ([]any, error) {
-	ctx := context.Background()
-
-	var result []any
-
-	// Create call options
-	opts := &bind.CallOpts{
-		Context: ctx,
-	}
-
-	// Call the contract method
-	err := contract.Call(opts, &result, methodName, args...)
-	if err != nil {
-		return nil, fmt.Errorf("Failed to call %s: %w", methodName, err)
-	}
-
-	return result, nil
 }

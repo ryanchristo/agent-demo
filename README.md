@@ -1,6 +1,6 @@
 # agentic
 
-Experimenting with agentic wallets and payments.
+Exploring agentic wallets and payments.
 
 ### a2a
 
@@ -44,10 +44,10 @@ Copy variables...
 cp .env-example .env
 ```
 
-Run example script...
+Run example client...
 
 ```sh
-go run example/main.go
+go run client/main.go
 ```
 
 View response...
@@ -55,7 +55,7 @@ View response...
 ```
 Connecting to node RPC endpoint...
 Creating ERC-8004 contract clients...
-Calling ERC-8004 contract clients...
+Calling ERC-8004 contract methods...
 Version: [1.0.0]
 Version: [1.0.0]
 Version: [1.0.0]

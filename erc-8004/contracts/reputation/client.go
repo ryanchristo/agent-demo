@@ -10,7 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	c "github.com/ryanchristo/agentic/erc-8004/client"
+	"github.com/ryanchristo/agentic/erc-8004/contracts"
 )
 
 // ReputationClient wraps a bound contract for reputation operations.
@@ -31,13 +31,13 @@ func NewClient(ctx context.Context, client *ethclient.Client) (*ReputationClient
 	contractAddress := common.HexToAddress(envContractAddress)
 
 	// Get the contract ABI from the JSON file.
-	contractABI, err := os.ReadFile("client/reputation/abi.json")
+	contractABI, err := os.ReadFile("contracts/reputation/abi.json")
 	if err != nil {
 		return nil, fmt.Errorf("Failed to read ABI: %w", err)
 	}
 
 	// Create a new contract client.
-	contractClient, err := c.CreateContractClient(client, contractAddress, contractABI)
+	contractClient, err := contracts.NewClient(client, contractAddress, contractABI)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create contract client: %w", err)
 	}
