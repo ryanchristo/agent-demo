@@ -10,10 +10,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/ryanchristo/agentic/erc-8004/contracts"
-	"github.com/ryanchristo/agentic/erc-8004/contracts/identity"
-	"github.com/ryanchristo/agentic/erc-8004/contracts/reputation"
-	"github.com/ryanchristo/agentic/erc-8004/contracts/validation"
+	"github.com/ryanchristo/agent-demo/erc-8004/contracts"
+	"github.com/ryanchristo/agent-demo/erc-8004/contracts/identity"
+	"github.com/ryanchristo/agent-demo/erc-8004/contracts/reputation"
+	"github.com/ryanchristo/agent-demo/erc-8004/contracts/validation"
 )
 
 func main() {

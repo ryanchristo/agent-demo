@@ -1,6 +1,6 @@
-# agentic
+# agent-demo
 
-Exploring agentic wallets and payments.
+Exploring agent protocols and frameworks.
 
 ### a2a
 

@@ -1,4 +1,4 @@
-module github.com/ryanchristo/agentic/a2a
+module github.com/ryanchristo/agent-demo/a2a
 
 go 1.25.5
 

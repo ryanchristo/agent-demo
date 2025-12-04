@@ -1,4 +1,4 @@
-module github.com/ryanchristo/agentic/mcp
+module github.com/ryanchristo/agent-demo/mcp
 
 go 1.25.5
 

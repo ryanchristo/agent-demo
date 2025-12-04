@@ -10,7 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/ryanchristo/agentic/erc-8004/contracts"
+	"github.com/ryanchristo/agent-demo/erc-8004/contracts"
 )
 
 // ValidationClient wraps a bound contract for validation operations.

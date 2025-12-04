@@ -1,4 +1,4 @@
-module github.com/ryanchristo/agentic/x402
+module github.com/ryanchristo/agent-demo/x402
 
 go 1.25.5
 

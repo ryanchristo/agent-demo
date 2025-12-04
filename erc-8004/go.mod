@@ -1,4 +1,4 @@
-module github.com/ryanchristo/agentic/erc-8004
+module github.com/ryanchristo/agent-demo/erc-8004
 
 go 1.25.5
 
