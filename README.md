@@ -10,6 +10,10 @@ Example code using the A2A protocol.
 
 Example code using the ERC-8004 trustless agents protocol.
 
+### mcp
+
+Example code using the Model Context Protocol.
+
 ### x402
 
 Example code using the x402 protocol.
@@ -38,7 +42,7 @@ View response...
 
 ### erc-8004
 
-Copy variables...
+Set environment...
 
 ```sh
 cp .env-example .env
@@ -61,7 +65,41 @@ Version: [1.0.0]
 Version: [1.0.0]
 ```
 
+### mcp
+
+Run example server...
+
+```sh
+go run server/main.go
+```
+
+Run example client...
+
+```sh
+go run client/main.go
+```
+
+View response...
+
+```
+2025/12/03 21:32:59 Connecting to MCP server at http://localhost:8000
+2025/12/03 21:32:59 Connected to server (session ID: Y3QVIILO37ZLOOUKCG2P5C57YZ)
+2025/12/03 21:32:59 Listing available tools...
+2025/12/03 21:32:59   - cityTime: Get the current time in NYC, San Francisco, or Boston
+2025/12/03 21:32:59 Getting time for each city...
+2025/12/03 21:32:59   The current time in New York City is 2025-12-04T00:32:59-05:00
+2025/12/03 21:32:59   The current time in San Francisco is 2025-12-03T21:32:59-08:00
+2025/12/03 21:32:59   The current time in Boston is 2025-12-04T00:32:59-05:00
+2025/12/03 21:32:59 Client completed successfully
+```
+
 ### x402
+
+Set environment...
+
+```sh
+cp .env-example .env
+```
 
 Run example server...
 
@@ -80,7 +118,7 @@ View response...
 ```
 Public content
 
-{"x402Version":1,"error":"Payment required for this resource","accepts":[{"scheme":"exact","network":"base-sepolia","maxAmountRequired":"1000","asset":"0x036CbD53842c5426634e7929541eC2318f3dCF7e","payTo":"0x49df1720937109e511c0ccd363a82620a596fe18","resource":"http://localhost:8080/protected","description":"Payment required for /protected","mimeType":"","maxTimeoutSeconds":120,"extra":{"name":"USDC","version":"2"}}]}
+{"x402Version":1,"error":"Payment required for this resource","accepts":[{"scheme":"exact","network":"base-sepolia","maxAmountRequired":"1000","asset":"0x036CbD53842c5426634e7929541eC2318f3dCF7e","payTo":"0x0","resource":"http://localhost:8080/protected","description":"Payment required for /protected","mimeType":"","maxTimeoutSeconds":120,"extra":{"name":"USDC","version":"2"}}]}
 
 Protected content
 ```
