@@ -60,3 +60,27 @@ Version: [1.0.0]
 Version: [1.0.0]
 Version: [1.0.0]
 ```
+
+### x402
+
+Run example server...
+
+```sh
+go run server/main.go
+```
+
+Run example client...
+
+```sh
+go run client/main.go
+```
+
+View response...
+
+```
+Public content
+
+{"x402Version":1,"error":"Payment required for this resource","accepts":[{"scheme":"exact","network":"base-sepolia","maxAmountRequired":"1000","asset":"0x036CbD53842c5426634e7929541eC2318f3dCF7e","payTo":"0x49df1720937109e511c0ccd363a82620a596fe18","resource":"http://localhost:8080/protected","description":"Payment required for /protected","mimeType":"","maxTimeoutSeconds":120,"extra":{"name":"USDC","version":"2"}}]}
+
+Protected content
+```
